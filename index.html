@@ -1,0 +1,88 @@
+
+<body>
+  <!-- inline-block display makes the div take up the width of the children blocks inside of it, not the full window. -->
+  <div class="full screen"
+   style="position: relative;
+   display: inline-block;">
+
+    <!-- absolute postion allows top div to overlap full screen div -->
+    <!-- flex display puts inner divs next to each other instead of the default block display stacking them on top of eachother -->
+    <!-- box sizing set to border-box makes the border included in the width and height, not added on top of it -->
+    <div class="top"
+     style="position: absolute;
+     display: flex;
+     width: 100%;
+     align-items: center;
+     padding: 20px;
+     box-sizing: border-box" >
+
+     <div class="player health parent"
+      style="position: relative;
+      height: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end">
+       <div class="player health" id="player health background"
+        style="background-color: yellow; height: 30; width: 100%">
+       </div>
+       <div class="player health" id="playerHealth"
+        style="position:absolute;
+        background-color: blue;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%">
+       </div>
+     </div>
+
+      <!-- flex display shrinks some specifically set elements to accomodate space,
+        setting flex shrink to 0 stops that. -->
+      <!-- align-items centers vertically, justify-content centers horizontally -->
+      <div
+       id= "timer"
+       class="timer"
+       style="background-color: orange;
+       height: 100px;
+       width: 100px;
+       flex-shrink: 0;
+       display: flex;
+       align-items: center;
+       justify-content: center">
+      </div>
+
+      <div class="enemy health parent"
+       style="position: relative;
+       height: 30px;
+       width: 100%">
+        <div class="enemy health" id="enemy health background"
+         style="background-color: yellow; height: 30">
+        </div>
+        <div class="enemy health" id="enemyHealth"
+         style="position:absolute;
+         background-color: red;
+         top: 0;
+         right: 0;
+         left: 0;
+         bottom: 0">
+        </div>
+      </div>
+    </div>
+    <div
+    id ='result'
+     class="result"
+      style= "position: absolute;
+      color: white;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0">
+    </div>
+    <canvas></canvas>
+  </div>
+
+
+  <script src="index.js"></script>
+</body>
